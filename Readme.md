@@ -51,6 +51,11 @@ You can setup a global grid system if your page layout follows the same pattern 
 }
 ```
 
+## `justify-self` is the `display: inline-block;` for grid
+
+By default, grid-item spans whole grid area (`stretch`) to which the item is assigned.  
+Use `justify-self: start | end | center` to make it inline-block.
+
 ## CSS properties to remember
 
 ### `order: 0;`
@@ -79,4 +84,35 @@ Removes all default browser styling (for selected element)
   // auto-flow: set 1 row and fill in each row in turn adding new rows as defined by grid-row later (default)
   // grid: auto-flow / 1em repeat(5, 1fr) 1em; // this is the same as below;
   grid-template-columns: 1em repeat(5, 1fr) 1em;
+```
+
+### `currentColor`
+
+https://css-tricks.com/currentcolor/
+
+`css-tricks`
+
+> …you can use this value to indicate you want to use the value of color for other properties that accept a color value: borders, box shadows, outlines, or backgrounds.
+
+`vscode doc`
+
+> The value of the 'color' property. The computed value of the 'currentColor' keyword is the computed value of the 'color' property. If the 'currentColor' keyword is set on the 'color' property itself, it is treated as 'color:inherit' at parse time.
+
+```css
+div {
+  color: red;
+  border: 5px solid currentColor;
+  box-shadow: 0 0 5px solid currentColor;
+}
+```
+
+### That tacky padded outline..
+
+Bring it with `padding` + `outline` + `outline-offset`
+
+```css
+.card {
+  padding: 2em;
+  outline: 2px solid currentColor;
+  outline-offset: -1em;
 ```

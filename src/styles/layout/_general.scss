@@ -12,3 +12,13 @@
     grid-column: 2 / 3;
   }
 }
+
+.section--card {
+  grid-template-columns: minmax(1em, 1fr) repeat(6, 1fr) minmax(1em, 1fr);
+  grid-template-rows: repeat(3, 1fr) minmax(0.5em, 3em);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
