@@ -1,0 +1,14 @@
+// these rules apply to everything in layout
+
+.section {
+  // setting up a global grid system (3 cols)
+  display: grid;
+  grid: auto-flow / minmax(1em, 1fr) minmax(300px, 700px) minmax(1em, 1fr);
+  padding: 5em 0;
+
+  &__title,
+  &__subtitle,
+  p {
+    grid-column: 2 / 3;
+  }
+}

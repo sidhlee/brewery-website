@@ -1,0 +1,47 @@
+svg {
+  width: 1em; // quick fix to shrink gigantic svgs
+}
+
+.section--beer {
+  text-align: center;
+}
+
+.grid-carousel {
+  grid-column: 1 / -1; // span the entire row
+  display: grid;
+  // auto-flow: set 1 row and fill in each row in turn adding new rows as defined by grid-row later (default)
+  // grid: auto-flow / 1em repeat(5, 1fr) 1em; // this is the same as below;
+  grid-template-columns: 2em repeat(5, 1fr) 2em;
+
+  max-width: 1200px; // keep the carousel within 1000px
+  margin: 3em auto;
+
+  &__button {
+    all: unset; // remove all default browser styling (for this element)
+    // button's column is 2em and we're giving padding of 0.5em to the both sides
+    // so that the button won't touch the end of the screen
+    padding: 0.5em;
+  }
+
+  position: relative;
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    // background: rgba(pink, 0.8); // little background to help us find the position
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &::before {
+    grid-column: 2 / 4; // it's really easy to position abs-positioned items in grid!
+    background: linear-gradient(to right, rgba(white, 0.9), rgba(white, 0.6));
+  }
+  &::after {
+    grid-column: -2 / -4; // cool trick to get inverted position!
+    background: linear-gradient(to left, rgba(white, 0.9), rgba(white, 0.6));
+  }
+}

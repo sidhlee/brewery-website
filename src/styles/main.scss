@@ -1,9 +1,14 @@
+// Abstracts
 @import "./abstracts/colors";
 @import "./abstracts/fonts";
 @import "./abstracts/mixins";
 
+// Base
 @import "./base//base";
 @import "./base/typography";
 
+// Layout
+@import "./layout/general";
 @import "./layout/nav";
 @import "./layout/intro";
+@import "./layout/beer";
