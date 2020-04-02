@@ -4,7 +4,7 @@
   outline-offset: -1em;
   box-shadow: 0 5px 0.5em rgba(black, 0.3);
   grid-row: 1 / 4;
-  max-width: 700px;
+  max-width: min(800px, 60vw);
 
   &--light {
     background: white;
@@ -23,6 +23,7 @@
     grid-column: 2 / span 4;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    justify-self: center;
     h2,
     p,
     p {
@@ -30,7 +31,7 @@
     }
   }
   &--end {
-    grid-column: 4 / span 3;
+    grid-column: 4 / span 4;
     justify-self: start;
     align-self: start;
   }

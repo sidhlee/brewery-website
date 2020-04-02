@@ -30,9 +30,19 @@ a {
   ...
 ```
 
+## Margin doesn't work on inline elements!
+
+To have any vertical space(or dimension) like margin | height, it has to be block | inline-block object.
+
 ## Global Grid Settings
 
 You can setup a global grid system if your page layout follows the same pattern in every section.
+
+### HTML inline elements
+
+- input, label, button, select, textarea
+- a, span, img
+- code, strong, i, small
 
 ```scss
 // _general.scss - these rules apply to everything in layout
