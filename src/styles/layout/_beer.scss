@@ -6,8 +6,20 @@ svg {
   text-align: center;
 }
 
+@keyframes slide-right {
+  100% {
+    transform: translateX(calc((min(1200px, 100vw) - 4em) / 5));
+  }
+}
+@keyframes slide-left {
+  100% {
+    transform: translateX(calc(((min(1200px, 100vw) - 4em) / 5) * -1));
+  }
+}
+
 .grid-carousel {
   grid-column: 1 / -1; // span the entire row
+
   display: grid;
   // auto-flow: set 1 row and fill in each row in turn adding new rows as defined by grid-row later (default)
   // grid: auto-flow / 1em repeat(5, 1fr) 1em; // this is the same as below;
@@ -16,11 +28,25 @@ svg {
   max-width: 1200px; // keep the carousel within 1000px
   margin: 3em auto;
 
+  &__item {
+    @include applyOrder(5);
+  }
+
   &__button {
     all: unset; // remove all default browser styling (for this element)
     // button's column is 2em and we're giving padding of 0.5em to the both sides
     // so that the button won't touch the end of the screen
     padding: 0.5em;
+    /* 
+    With the applyOrder mixin, each beer item attained the order, but arrow buttons don't have them
+    so both the arrows were placed to the left of all the beers.
+    Here, we're fixing that problem by giving the second arrow button an order of 99.
+    */
+    &:last-of-type {
+      order: 99;
+    }
+    z-index: 5;
+    background: white; // to hide moving pints underneath the button;
   }
 
   position: relative;
@@ -34,6 +60,7 @@ svg {
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 10;
   }
 
   &::before {

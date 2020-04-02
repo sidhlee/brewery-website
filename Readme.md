@@ -53,6 +53,12 @@ You can setup a global grid system if your page layout follows the same pattern 
 
 ## CSS properties to remember
 
+### `order: 0;`
+
+The `order` property specifies the order of an item inside flex-box or grid, and has 0 as default value.
+
+- **`order: 0;` is equivalent to not setting order at all.**
+
 ### `all: unset;`
 
 Removes all default browser styling (for selected element)
