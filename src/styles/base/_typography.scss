@@ -1,0 +1,37 @@
+body {
+  font-family: $ff-body;
+  font-size: 1.3125rem; // 21px / 16px
+  line-height: 1.5;
+  color: $color-brown-dark;
+  font-weight: $fw-normal;
+}
+
+h1,
+h2,
+h3,
+p,
+figure {
+  // figure is not typography but while we're at it...
+  margin: 0;
+}
+
+.section__title,
+.section__subtitle {
+  font-family: $ff-title;
+  line-height: 1;
+}
+
+.section__title {
+  font-size: 4.75rem; // 76 / 16
+  color: $color-blue-dark;
+}
+
+.section__subtitle {
+  font-size: 1.69rem; // 27 / 16
+  color: $color-blue-light;
+  font-weight: $fw-bold; // If I imported only bold font, this would have not been necessary
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 2px; // wider
+  margin-bottom: 0.5em;
+}
