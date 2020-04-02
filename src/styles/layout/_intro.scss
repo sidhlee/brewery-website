@@ -1,6 +1,6 @@
 .logo {
   width: 250px; // shrink it
-  margin: 0 auto; // center it
+  margin: 2em auto 0; // center it
   display: block; // need "display: block;" for images to have margin
 }
 
@@ -8,9 +8,9 @@
   background-image: url("/images/hero-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 10vh 0;
+  padding: 4em 0;
   display: grid;
-  grid: auto-flow / minmax(1em, 1fr) minmax(400px, 650px) minmax(1em, 1fr);
+  grid: auto-flow / minmax(1em, 1fr) minmax(300px, 700px) minmax(1em, 1fr);
   text-align: center;
   color: $color-brown-base;
 
@@ -25,7 +25,7 @@
       display: block;
       height: 1px;
       width: 15%;
-      margin: 1.7em auto 1em;
+      margin: 1.7em auto 0.9em;
       background: white;
       opacity: 0.3;
     }

@@ -1,0 +1,28 @@
+nav {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly; // more space to the side on smaller device
+    padding: 0;
+    max-width: 800px; // more than this, user has to move mouse around to get to other links
+    margin: 1em auto 0;
+  }
+
+  a {
+    color: $color-brown-light;
+    text-decoration: none;
+    font-size: min(
+      max(4vw, 1rem),
+      1.4rem
+    ); // fluid font-size (especially for < 350px). * 4vw is my magic number :p
+
+    &:hover {
+      text-decoration: underline; // maybe add active underline thingy next time?
+    }
+  }
+}
