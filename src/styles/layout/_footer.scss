@@ -5,13 +5,12 @@ footer {
   .logo {
     margin: 2em auto;
   }
-}
-
-p {
-  font-family: $ff-title;
-  font-weight: bold;
-  line-height: 1;
-  margin: 0;
+  p {
+    font-family: $ff-title;
+    font-weight: bold;
+    line-height: 1;
+    margin: 0;
+  }
 }
 
 // fill is set on path element inside svg

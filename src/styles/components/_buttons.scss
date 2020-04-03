@@ -8,6 +8,7 @@
   margin: 0.2em 0;
   grid-column: 1 / 4;
   justify-self: start; // inline-block for grid!
+  align-self: center;
   border-radius: 5px;
 
   &:hover {

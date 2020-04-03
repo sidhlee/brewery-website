@@ -1,5 +1,7 @@
 # Brewery Website
 
+## TODO: add responsive design for mobile
+
 ## Setting up with Parcel
 
 1. `yarn init --y`
@@ -61,10 +63,39 @@ You can setup a global grid system if your page layout follows the same pattern 
 }
 ```
 
+<br>
+
 ## `justify-self` is the `display: inline-block;` for grid
 
 By default, grid-item spans whole grid area (`stretch`) to which the item is assigned.  
 Use `justify-self: start | end | center` to make it inline-block.
+
+<br>
+
+## CSS Nesting Chaos
+
+**NEVER** , ever use HTML element as a root level selector. It becomes extremely difficult to debug later.
+
+```scss
+footer {
+  text-align: center;
+  color: $color-brown-light;
+  padding: 5em 0;
+  .logo {
+    margin: 2em auto;
+  }
+}
+
+// setTimeout(useTrouble, SOONER_OR_LATER);
+p {
+  font-family: $ff-title;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0;
+}
+```
+
+<br>
 
 ## CSS properties to remember
 
@@ -126,3 +157,11 @@ Bring it with `padding` + `outline` + `outline-offset`
   outline: 2px solid currentColor;
   outline-offset: -1em;
 ```
+
+<br>
+
+## DOM Manipulation Gotchas
+
+- When adding `@keyframe` to `Element.style.animation` to trigger CSS animation, make sure to empty the `animation` property inside `animationend` event handler function. If you forget to cleanup, animation will work only the first time.
+
+- When calling `removeEventListener(e, cb)`, make sure you do that after all the events are fired from its (multiple) children.
