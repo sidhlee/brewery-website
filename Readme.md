@@ -4,7 +4,7 @@
 
 ## Setting up with Parcel
 
-1. `yarn init --y`
+1. `yarn init -y`
 2. `yarn add parcel-bundler --dev`
 3. `package.json`
 
